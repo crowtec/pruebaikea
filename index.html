@@ -2,7 +2,7 @@
   <body>
     <div>Resultado: <span id="result"></span></div>
     <script>
-      fetch("https://dev.family.ikea.es/ikeacom/services/nextgen-2022/", {
+      fetch("https://dev.family.ikea.es/ikeacom/services/nextgen-2022/participate/", {
         headers: {
           accept: "application/json, text/plain, */*",
           "content-type": "application/json",
@@ -12,7 +12,7 @@
       })
         .then((res) => {
           console.log("Success:", res);
-          document.getElementById("result").innerHTML = res;
+          document.getElementById("result").innerHTML = res.body;
         })
         .catch((error) => {
           console.error("Error:", error);

@@ -1,0 +1,23 @@
+<html>
+  <body>
+    <div>Resultado: <span id="result"></span></div>
+    <script>
+      fetch("https://dev.family.ikea.es/ikeacom/services/nextgen-2022/", {
+        headers: {
+          accept: "application/json, text/plain, */*",
+          "content-type": "application/json",
+        },
+        body: '{"ccn":"9999999999999999999","enc":"f","src":"tw"}',
+        method: "POST",
+      })
+        .then((res) => {
+          console.log("Success:", res);
+          document.getElementById("result").innerHTML = res;
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          document.getElementById("result").innerHTML = error;
+        });
+    </script>
+  </body>
+</html>
